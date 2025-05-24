@@ -6,6 +6,9 @@ const PORT = 3000;
 
 // Servir les fichiers statiques dans "public"
 app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 // Servir les fichiers GeoJSON
 app.get('/geojson/:id', (req, res) => {
