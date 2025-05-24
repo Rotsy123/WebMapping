@@ -1,0 +1,86 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+            "id":"101222666666",
+            "nom": "NOMENJANAHARY",
+            "prenom": "Niaina Patrick",
+            "telephone": "0340755080",
+            "adresse": "Lot I, Antananarivo",
+            "type_tany":"Site de reboisement",
+            "img":"niaina.png"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[47.510, -18.911], [47.511, -18.911], [47.511, -18.910], [47.5105, -18.9095], [47.510, -18.910], [47.510, -18.911]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "id":"10122256898",
+            "nom": "RAKOTONDRAINY",
+            "prenom": "Rotsy",
+            "telephone": "0345770369",
+            "adresse": "Logt 432 Cite Ambohipo, Antananarivo",
+            "type_tany":"Zone d' Habitation",
+            "img":"rotsy.png"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[47.511, -18.911], [47.512, -18.911], [47.512, -18.910], [47.5115, -18.9096], [47.511, -18.910], [47.511, -18.911]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "id":"101221889775",
+            "nom": "Rasoanaivo",
+            "prenom": "Liva",
+            "telephone": "0333344556",
+            "adresse": "Lot III, Antananarivo",
+            "type_tany":"Zone de culture",
+            "img":"liva.png"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[47.512, -18.911], [47.513, -18.911], [47.513, -18.9102], [47.5125, -18.9097], [47.512, -18.9102], [47.512, -18.911]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "id":"101222565987",
+            "nom": "Randriamihaja",
+            "prenom": "Zo",
+            "telephone": "0325566778",
+            "adresse": "Lot IV, Antananarivo",
+            "type_tany":"Agro foresterie",
+            "img":"zo.png"
+        },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[47.513, -18.911], [47.514, -18.911], [47.514, -18.9103], [47.5135, -18.9098], [47.513, -18.9103], [47.513, -18.911]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "id":"101221456789",
+            "nom": "Ravelomanana",
+            "prenom": "Tiana",
+            "telephone": "0347788990",
+            "adresse": "Lot V, Antananarivo",
+            "type_tany":"Perimetre irrigue",
+            "img":"tiana.png"
+            },
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[47.514, -18.911], [47.515, -18.911], [47.515, -18.9104], [47.5145, -18.9099], [47.514, -18.9104], [47.514, -18.911]]]
+        }
+      }
+    ]
+  }
+  

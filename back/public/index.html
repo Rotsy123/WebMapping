@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carte des utilisateurs</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    body, html { margin: 0; padding: 0; }
+    #map { height: 100vh; width: 100vw; }
+    .leaflet-popup-content-wrapper {
+      max-width: 200px !important;
+      max-height: 400px;
+      /* overflow-y: auto; */
+    }
+
+    .popup-user {
+      text-align: center;
+      padding: 10px;
+    }
+      .leaflet-popup-content-wrapper {
+      max-width: 300px !important; 
+    }
+    .popup-user img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 5px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+      border: 2px solid #444;
+    }
+
+
+    .popup-user .info input {
+      padding: 3px;
+      margin: 3px 0;
+      font-size: 12px;
+    }
+
+
+    .popup-user .info input:disabled {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([-18.8792, 47.5079], 12); // Centré sur Tana
+
+    // Fond satellite Esri
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics',
+      maxZoom: 18
+    }).addTo(map);
+
+    // Chargement GeoJSON
+    fetch('/geojson/terrain1')
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            const popupHTML = `
+              <div class="popup-user">
+                <img src="${p.img}" alt="Avatar">
+                <div class="info">
+                  <input type="text" disabled value="${p.nom} ${p.prenom}" title="Nom complet" />
+                  <input type="text" disabled value="🆔 ${p.id}" />
+                  <input type="text" disabled value="📞 ${p.telephone}" />
+                  <input type="text" disabled value="📍 ${p.adresse}" />
+                  <input type="text" disabled value="${p.type_tany}" />
+                </div>
+              </div>
+            `;
+            layer.bindPopup(popupHTML);
+          }
+        }).addTo(map);
+      });
+  </script>
+</body>
+</html>
